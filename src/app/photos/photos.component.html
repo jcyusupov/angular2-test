@@ -1,0 +1,39 @@
+<md-card>
+    <md-input
+        class="demo-full-width"
+        placeholder="Search By Name"
+        [value]="filter.name"
+        (input)="filter.name = $event.target.value; changeFilter()"
+    ></md-input>
+    <md-input
+        class="demo-full-width"
+        placeholder="Search By Author"
+        [value]="filter.author"
+        (input)="filter.author = $event.target.value; changeFilter()"
+    ></md-input>
+</md-card>
+<md-card style="margin-top:20px">
+    <md-card-subtitle>Items</md-card-subtitle>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>Likes Count</th>
+                    <th>Visible</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of filteredItems">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.author}}</td>
+                    <td>{{item.likes}}</td>
+                    <td>{{item.isVisible ? 'Yes': 'No'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</md-card>
