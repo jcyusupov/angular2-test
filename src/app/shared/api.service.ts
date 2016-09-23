@@ -2,6 +2,18 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ApiService {
+  save(item) {
+    const index = this.items.findIndex((i) => i.id === item.id);
+
+    if (-1 !== index) {
+      this.items = [
+        ...this.items.slice(0, index),
+        item,
+        ...this.items.slice(index + 1),
+      ]
+    }
+  }
+
   items = [
     {
       'id': 1,

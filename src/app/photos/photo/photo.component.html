@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-sm-6">
+    <md-card>
+      <img [src]="item.url" class="md-card-image" alt=""/>
+    </md-card>
+  </div>
+  <div class="col-sm-6">
+    <md-card>
+      <md-card-title layout="column">
+        <md-input
+          class="demo-full-width"
+          placeholder="Name"
+          [value]="item.name"
+          (input)="item.name = $event.target.value"
+        ></md-input>
+        <md-input
+          class="demo-full-width"
+          placeholder="Author"
+          [value]="item.author"
+          (input)="item.author = $event.target.value"
+        ></md-input>
+        <div flex-gt-xs="100">
+          <md-checkbox [checked]="item.isVisible" (change)="item.isVisible = $event">
+            Visible
+          </md-checkbox>
+        </div>
+        <div flex-gt-xs="100">
+          Likes {{item.likes}}
+        </div>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="end center">
+        <button md-raised-button color="primary" (click)="save()">Save</button>
+        <button md-raised-button (click)="router.navigate(['photos'])">Cancel</button>
+      </md-card-actions>
+    </md-card>
+  </div>
+</div>

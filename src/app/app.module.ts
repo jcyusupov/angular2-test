@@ -6,12 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PhotosComponent } from './photos/photos.component';
+import { PhotoComponent } from './photos/photo/photo.component';
 import { ApiService } from './shared';
 import { routing } from './app.routing';
 
 import { MdButtonModule } from '@angular2-material/button';
 import { MdCardModule } from '@angular2-material/card';
 import { MdInputModule } from '@angular2-material/input';
+import { MdCheckboxModule } from '@angular2-material/checkbox';
 
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
@@ -24,12 +26,14 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     routing,
     MdButtonModule.forRoot(),
     MdCardModule.forRoot(),
-    MdInputModule.forRoot()
+    MdInputModule.forRoot(),
+    MdCheckboxModule.forRoot()
   ],
   declarations: [
     AppComponent,
     HomeComponent,
-    PhotosComponent
+    PhotosComponent,
+    PhotoComponent
   ],
   providers: [
     ApiService
